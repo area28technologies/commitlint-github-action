@@ -30,7 +30,7 @@ module.exports = {
       (parsed) => {
         const jiraRegex = parsed.body.match(/[A-Z]+[-\d]+/g)
         const jiraIgnoreRegex = parsed.body.match(/TECH/g)
-        if ( jiraRegex != null || jiraIgnoreRegex != null) {
+        if (jiraRegex != null || jiraIgnoreRegex != null) {
           return [true]
         }
         return [false, 'The body doesnot have Jira ID OR ignore quote']
