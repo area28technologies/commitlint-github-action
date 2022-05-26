@@ -23,7 +23,7 @@ jobs:
             ${{ runner.os }}-node-
       - run: npm ci --ignore-scripts
       - name: work around permission issue
-        run: git config --global --add safe.directory /__w/quick-lint-js/quick-lint-js      
+        run: git config --global --add safe.directory /github/workspace     
       - uses: ./
         id: run_commitlint
         env:
