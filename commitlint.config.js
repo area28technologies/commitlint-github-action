@@ -28,8 +28,8 @@ module.exports = {
       2, // level: error
       'always',
       (parsed) => {
-        const jiraRegex = parsed.body.match(/[A-Z]+[-\d]+/g)
-        const jiraIgnoreRegex = parsed.body.match(/TECH/g)
+        const jiraRegex = parsed.body.toString().match(/[A-Z]+[-\d]+/g)
+        const jiraIgnoreRegex = parsed.body.toString().match(/TECH/g)
         if (jiraRegex != null || jiraIgnoreRegex != null) {
           return [true]
         }
