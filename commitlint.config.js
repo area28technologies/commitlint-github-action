@@ -24,7 +24,7 @@ module.exports = {
       'always',
       validateBodyMaxLengthIgnoringDeps,
     ],
-    'function-rules/body-jira-id-check': [
+    'function-rules/body-full-stop': [
       2, // level: error
       'always',
       (parsed) => {
