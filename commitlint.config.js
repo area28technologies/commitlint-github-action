@@ -28,13 +28,11 @@ module.exports = {
       2, // level: error
       'always',
       (parsedCommit) => {
-        if (parsedCommit.body == null){
-          const body = ''
-        }else{
-          const body = parsedCommit.body
+        if (parsedCommit.body == null) {
+          parsedCommit.body = ''
         }
-        const jiraRegex = body.match(/[A-Z]+[-\d]+/g)
-        const jiraIgnoreRegex = body.match(/TECH/g)
+        const jiraRegex = parsedCommit.body.match(/[A-Z]+[-\d]+/g)
+        const jiraIgnoreRegex = parsedCommit.body.match(/TECH/g)
         if (jiraRegex != null || jiraIgnoreRegex != null) {
           return [true]
         }
